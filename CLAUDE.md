@@ -26,7 +26,3 @@ Verify changes by playing in the browser; there is no automated test harness.
 - **Asteroid sizes**: `size` 3/2/1 = large/medium/small, indexing the parallel arrays `RADII`, `SPEEDS`, `POINTS` (index 0 unused). `split()` returns two asteroids of `size - 1`, or none at size 1.
 - **Collisions**: circle-distance checks with `dist()`. Bullet vs asteroid in `update()`; ship vs asteroid uses `ship.radius + a.radius * 0.82` and is skipped while `ship.invincible > 0` (3 s after each reset, shown as blinking).
 - **Input**: `keys[e.code]` holds held keys (rotation/thrust); `pressed(code)` is a consume-once edge trigger built on `justPressed` (used for Space to shoot/restart). Shooting is also rate-limited by `ship.shootCooldown`.
-
-## Notes
-
-- The README still mentions power-ups and a "shooting star" asteroid type; both were removed from the code (commit `13e713f`).
